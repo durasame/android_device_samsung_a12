@@ -39,14 +39,11 @@ system                                                 /system                ex
 vendor                                                 /vendor                ext4     ro wait,avb,logical,first_stage_mount,
 product                                                /product               ext4     ro wait,avb,logical,first_stage_mount,
 odm                                                    /odm                   ext4     ro wait,avb,logical,first_stage_mount,
-/dev/block/platform/bootdevice/by-name/prism           /prism                 ext4     ro,barrier=1 nofail,avb,first_stage_mount
-/dev/block/platform/bootdevice/by-name/optics          /optics                ext4     ro,barrier=1 nofail,avb,first_stage_mount
 
 # Metadata
 /dev/block/platform/bootdevice/by-name/md_udc          /metadata              ext4     noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,formattable,first_stage_mount,check
 
 # Cache/Data/EFS Point
-#/dev/block/platform/bootdevice/by-name/userdata       /data                  f2fs     noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678	wait,check,quota,reservedsize=128M,,resize,checkpoint=fs,fileencryption=aes-256-xts
 /dev/block/platform/bootdevice/by-name/cache           /cache                 ext4     noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,check,formattable
 /dev/block/platform/bootdevice/by-name/efs             /mnt/vendor/efs        ext4     noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,check,formattable
 
@@ -63,8 +60,6 @@ odm                                                    /odm                   ex
 /dev/block/platform/bootdevice/by-name/lk2             /bootloader2           emmc     defaults defaults
 /dev/block/platform/bootdevice/by-name/para            /para                  emmc     defaults defaults
 /dev/block/platform/bootdevice/by-name/misc            /misc                  emmc     defaults defaults
-/dev/block/platform/bootdevice/by-name/boot            /boot                  emmc     defaults first_stage_mount,nofail,
-/dev/block/platform/bootdevice/by-name/recovery        /recovery              emmc     defaults first_stage_mount,nofail,
 /dev/block/platform/bootdevice/by-name/vbmeta_vendor   /vbmeta_vendor         emmc     defaults first_stage_mount,nofail,
 /dev/block/platform/bootdevice/by-name/vbmeta_samsung  /vbmeta_samsung        emmc     defaults first_stage_mount,nofail,,avb=vbmeta
 /dev/block/platform/bootdevice/by-name/logo            /logo                  emmc     defaults defaults
@@ -84,7 +79,6 @@ odm                                                    /odm                   ex
 /dev/block/platform/bootdevice/by-name/spmfw           /spmfw                 emmc     defaults defaults
 /dev/block/platform/bootdevice/by-name/boot_para       /boot_para             emmc     defaults defaults
 /dev/block/platform/bootdevice/by-name/odmdtbo         /odmdtbo               emmc     defaults defaults
-/dev/block/platform/bootdevice/by-name/dtbo            /dtbo                  emmc     defaults defaults
 /dev/block/platform/bootdevice/by-name/vbmeta          /vbmeta                emmc     defaults defaults
 /dev/block/platform/bootdevice/by-name/gz1             /gz1                   emmc     defaults defaults
 /dev/block/platform/bootdevice/by-name/uh              /uh                    emmc     defaults defaults
