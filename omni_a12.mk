@@ -31,6 +31,6 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a12/recover
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := omni_a12
 PRODUCT_DEVICE := a12
-PRODUCT_MODEL := SM-A125F
-PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := Galaxy A12
+PRODUCT_BRAND := Samsung
+PRODUCT_MANUFACTURER := Samsung
